@@ -1,0 +1,61 @@
+.body {
+  border: none;
+  box-sizing: border-box;
+}
+
+.cal-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 0px auto;
+  width: fit-content;
+  background-color: black;
+  padding: 20px;
+  height: 500px;
+  display: flex;
+}
+
+.cal-container {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.double {
+  width: 140px;
+  border-radius: 50px;
+}
+
+.result {
+  color: white;
+  text-align: right;
+  font-size: 60px;
+}
+
+.yellow {
+  background-color: #f69907;
+}
+
+.gray {
+  background-color: #a0a0a0;
+}
+
+.black {
+  background-color: #313131;
+}
