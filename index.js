@@ -5,6 +5,7 @@ let showString = [];
 let calNum = "";
 let calFunc = [];
 let resultNum = 0;
+let isResult = false;
 
 const checkNumber = (value) => {
   if (value === "0") return true;
@@ -15,12 +16,20 @@ const handleClick = (e) => {
   const value = e.target.innerText;
   const isNumber = checkNumber(value); // 숫자인지 아닌지 확인을해야된다 부호를 걸러내야하기때문에
   if (isNumber) {
-    // calNum = calNum + value; //calNum += value;
+    if (isResult) {
+      calNum = "";
+      showString = [];
+      calFunc = [];
+      resultNum = 0;
+      isResult = false;
+    }
     calNum += value;
     paintResult(value);
   }
   if (!isNumber) {
     // //const lastItemOfCalFunc = calFunc[calFunc.length - 1];//
+    isResult = false;
+
     if (value === "=") {
       console.log(calFunc);
       if (calNum) {
@@ -43,7 +52,10 @@ const handleClick = (e) => {
         //0 번째 2번째 4번째 숫자를 Result에 넣어서 더해라
       });
       showString = [];
+      calFunc = [];
+      calNum = resultNum;
       paintResult(resultNum);
+      isResult = true;
       return;
     }
     if (calNum) {
